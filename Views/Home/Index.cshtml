@@ -6,32 +6,32 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<form>
+<form asp-action="respuesta" method="post">
     <h3> Datos Personales</h3>
     Nombre Completo: <input type="text" name="nombre">
     Edad: <input type="number" name="edad">
     Dni: <input type="number" name="dni">
     <h3> Situacion Laboral</h3>
-    actualmente trabaja?: <input type = "radio" name="trabaja">
+    <label>actualmente trabaja?: <input type = "radio" name="trabaja"></label>
     cual es su tipo de empleo?: <select name="tipo de empleo">
-    <option value ="relacion de dependencia">relacion de dependencia<option>
-    <option value ="monontributista">monoitributista<option>
-    <option value ="autonomo">autonomo<option>
-    <option value ="desempleado">desempleado<option>
+    <option value ="relacion de dependencia" placeholder="">relacion de dependencia</option>
+    <option value ="monontributista" placeholder="">monoitributista</option>
+    <option value ="autonomo" placeholder="">autonomo</option>
+    <option value ="desempleado" placeholder="">desempleado</option></select>
     <h3> Situacion Economica</h3>
-    ingreso mensual: <input type ="number" name="ingreso">
-    ¿Posee otras deudas?: <input type="radio" name="deudas">
-    En caso afirmativo, seleccione cuáles:
-        <input type="checkbox" name="deuda" value="tarjeta de credito"> Tarjeta de credito<br>
-        <input type="checkbox" name="deuda" value="bancario"> Préstamo bancario<br>
-        <input type="checkbox" name="deuda" value="informal"> Préstamo informal
+    <label>ingreso mensual: <input type ="number" name="ingreso"></label><br>
+    <label>¿Posee otras deudas?: <input type="radio" name="deudas"></label> <br>
+    <label>En caso afirmativo, seleccione cuáles:<br>
+        <input type="checkbox" name="deuda" value="tarjeta de credito" >tarjeta de credito<br>
+        <input type="checkbox" name="deuda" value="bancario" >prestamo bancario<br>
+        <input type="checkbox" name="deuda" value="informal" >prestamo informal</label>
     <h3>Condiciones del préstamo</h3>
-    Monto solicitado: <ipnut type="number" name="monto">
-    Plazo de devolución: <select name="plazo">
-    <option value ="6">6 meses<option>
-    <option value ="12">12 meses<option>
-    <option value ="24">24 meses<option>
+    <label>Monto solicitado: <input type="number" name="monto"></label>
+    <label>Plazo de devolución: <select name="plazo">
+    <option value ="6">6 meses</option>
+    <option value ="12">12 meses</option>
+    <option value ="24">24 meses</option></select></label>
     <h3> CONFIRMAR PRESTAMO</h3>
-    <ipnut type="checkbox" name="TyC"> Acepto lo terminos y Condiciones
-    <input type="submit"> Enviar
+    <label><input type="checkbox" name="TyC"> Acepto lo terminos y Condiciones</label>
+    <label><input type="submit"> Enviar</label>
 </form>

@@ -18,6 +18,38 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult respuesta(string nombre, int edad, string situacionLaboral, int ingreso, List<string> deudas, int montoSolicitado, string plazoDevolucion, bool terminosYCondiciones)
+    {
+        bool puede;
+        if (edad < 18)
+        {
+            puede = false;
+        }
+        if (situacionLaboral == "desempleado")
+        {
+            puede = false;
+        }
+        if (ingreso < 250000)
+        {
+            puede = false;
+        }
+        if (montoSolicitado > ingreso * 5)
+        {
+            puede = false;
+        }
+        if (deudas.Count > 0)
+        {
+            puede = false;
+        }
+        if (!terminosYCondiciones)
+        {
+            puede = false;
+        }
+
+
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
