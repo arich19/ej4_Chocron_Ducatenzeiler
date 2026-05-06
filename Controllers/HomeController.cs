@@ -20,32 +20,41 @@ public class HomeController : Controller
 
     public IActionResult respuesta(string nombre, int edad, string situacionLaboral, int ingreso, List<string> deudas, int montoSolicitado, string plazoDevolucion, bool terminosYCondiciones)
     {
-        bool puede;
+        string motivoRechazo = "Motivos del rechazo: ";
+        bool puede = true;
+        terminosYCondiciones = true;
         if (edad < 18)
         {
             puede = false;
+            motivoRechazo += "El solicitante es menor de edad. ";
         }
         if (situacionLaboral == "desempleado")
         {
             puede = false;
+            motivoRechazo += "El solicitante está desempleado. ";
         }
         if (ingreso < 250000)
         {
             puede = false;
+            motivoRechazo += "El ingreso mensual es insuficiente. ";
         }
         if (montoSolicitado > ingreso * 5)
         {
             puede = false;
+            motivoRechazo += "El monto solicitado es demasiado alto en relación al ingreso. ";
         }
-        if (deudas.Count > 0)
+        if (deudas.Count >= 1)
         {
             puede = false;
+            motivoRechazo += "El solicitante tiene deudas pendientes. ";
         }
         if (!terminosYCondiciones)
         {
             puede = false;
+            motivoRechazo += "No se han aceptado los términos y condiciones. ";
         }
-
+        ViewBag.Puede = puede;
+        ViewBag.MotivoRechazo = motivoRechazo;
 
         return View();
     }

@@ -7,31 +7,39 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <form asp-action="respuesta" method="post">
-    <h3> Datos Personales</h3>
-    Nombre Completo: <input type="text" name="nombre">
-    Edad: <input type="number" name="edad">
-    Dni: <input type="number" name="dni">
-    <h3> Situacion Laboral</h3>
-    <label>actualmente trabaja?: <input type = "radio" name="trabaja"></label>
-    cual es su tipo de empleo?: <select name="tipo de empleo">
-    <option value ="relacion de dependencia" placeholder="">relacion de dependencia</option>
-    <option value ="monontributista" placeholder="">monoitributista</option>
-    <option value ="autonomo" placeholder="">autonomo</option>
-    <option value ="desempleado" placeholder="">desempleado</option></select>
-    <h3> Situacion Economica</h3>
-    <label>ingreso mensual: <input type ="number" name="ingreso"></label><br>
-    <label>¿Posee otras deudas?: <input type="radio" name="deudas"></label> <br>
-    <label>En caso afirmativo, seleccione cuáles:<br>
-        <input type="checkbox" name="deuda" value="tarjeta de credito" >tarjeta de credito<br>
-        <input type="checkbox" name="deuda" value="bancario" >prestamo bancario<br>
-        <input type="checkbox" name="deuda" value="informal" >prestamo informal</label>
+    <h3>Datos Personales</h3>
+    <label>Nombre Completo: <input type="text" name="nombre" /></label>
+    <label>Edad: <input type="number" name="edad" /></label>
+    <label>Dni: <input type="number" name="dni" /></label>
+
+    <h3>Situación Laboral</h3>
+    <label>¿Cuál es su situación laboral?</label>
+    <select name="situacionLaboral">
+        <option value="relacion de dependencia">relacion de dependencia</option>
+        <option value="monotributo">monotributista</option>
+        <option value="autonomo">autonomo</option>
+        <option value="desempleado">desempleado</option>
+    </select>
+
+    <h3>Situación Económica</h3>
+    <label>Ingreso mensual: <input type="number" name="ingreso" /></label>
+
+    <label>En caso de tener deudas, seleccione cuáles:</label><br />
+    <input type="checkbox" name="deudas" value="tarjeta de credito" /> tarjeta de credito<br />
+    <input type="checkbox" name="deudas" value="bancario" /> prestamo bancario<br />
+    <input type="checkbox" name="deudas" value="informal" /> prestamo informal<br />
+
     <h3>Condiciones del préstamo</h3>
-    <label>Monto solicitado: <input type="number" name="monto"></label>
-    <label>Plazo de devolución: <select name="plazo">
-    <option value ="6">6 meses</option>
-    <option value ="12">12 meses</option>
-    <option value ="24">24 meses</option></select></label>
-    <h3> CONFIRMAR PRESTAMO</h3>
-    <label><input type="checkbox" name="TyC"> Acepto lo terminos y Condiciones</label>
-    <label><input type="submit"> Enviar</label>
+    <label>Monto solicitado: <input type="number" name="montoSolicitado" /></label>
+    <label>Plazo de devolución:
+        <select name="plazoDevolucion">
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+            <option value="24">24 meses</option>
+        </select>
+    </label>
+
+    <h3>Confirmar préstamo</h3>
+    <label><input type="checkbox" name="terminosYCondiciones" /> Acepto los términos y condiciones</label><br />
+    <input type="submit" value="Enviar" />
 </form>

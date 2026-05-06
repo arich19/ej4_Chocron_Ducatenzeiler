@@ -1,0 +1,11 @@
+@if(ViewBag.Puede == true)
+{
+    <h1>Bienvenido @ViewBag.Nombre</h1>
+    <p>Su solicitud de credito ha sido aprobada</p>
+}
+else
+{
+    <h1>Lo sentimos @ViewBag.Nombre</h1>
+    <p>Su solicitud de credito ha sido rechazada</p>
+    <p>@ViewBag.MotivoRechazo</p>
+}
