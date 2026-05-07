@@ -18,11 +18,10 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult respuesta(string nombre, int edad, string situacionLaboral, int ingreso, List<string> deudas, int montoSolicitado, string plazoDevolucion, bool terminosYCondiciones)
+    public IActionResult respuesta(string nombre, int edad, string situacionLaboral, int ingreso, List<string> deudas, int montoSolicitado, string plazoDevolucion, string terminosYCondiciones)
     {
         string motivoRechazo = "Motivos del rechazo: ";
         bool puede = true;
-        terminosYCondiciones = true;
         if (edad < 18)
         {
             puede = false;
@@ -48,7 +47,7 @@ public class HomeController : Controller
             puede = false;
             motivoRechazo += "El solicitante tiene deudas pendientes. ";
         }
-        if (!terminosYCondiciones)
+        if (terminosYCondiciones == null)
         {
             puede = false;
             motivoRechazo += "No se han aceptado los términos y condiciones. ";

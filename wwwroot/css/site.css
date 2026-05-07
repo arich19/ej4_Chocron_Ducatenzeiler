@@ -29,3 +29,77 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #e8fffe;
+    color: #1a1a1a;
+}
+
+.page-wrapper {
+    max-width: 680px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #07BEB8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 1.5rem 0 0.75rem;
+    border-bottom: 1px solid #68D8D6;
+    padding-bottom: 0.4rem;
+}
+
+.form-card, .result-card {
+    background: #fff;
+    border: 1px solid #68D8D6;
+    border-radius: 12px;
+    padding: 1.5rem 2rem 2rem;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0.6rem;
+}
+
+input[type="text"], input[type="number"], select {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #68D8D6;
+    border-radius: 8px;
+    background: #f0fffe;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #07BEB8;
+    box-shadow: 0 0 0 3px #C4FFF9;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #07BEB8;
+    width: 16px;
+    height: 16px;
+}
+
+input[type="submit"] {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 10px;
+    background: #07BEB8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
